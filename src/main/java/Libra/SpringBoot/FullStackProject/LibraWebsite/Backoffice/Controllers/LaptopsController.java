@@ -4,11 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class BackofficeController {
+public class LaptopsController {
 
-    @GetMapping(value = "/backoffice_dashboard")
-    public String getBackoffice(){
-        return "./Backoffice/dashboard";
+    @GetMapping(value = "/backoffice_laptops")
+    public String getLaptops(){
+        return "./Backoffice/laptops";
     }
 
 }

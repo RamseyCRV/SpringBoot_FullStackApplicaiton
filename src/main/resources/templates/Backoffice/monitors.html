@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Libra Backoffice</title>
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <!-- waves.css -->
+    <link rel="stylesheet" href="pages/waves/css/waves.min.css" type="text/css" media="all">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
+    <!-- waves.css -->
+    <link rel="stylesheet" href="pages/waves/css/waves.min.css" type="text/css" media="all">
+    <!-- themify icon -->
+    <link rel="stylesheet" type="text/css" href="icon/themify-icons/themify-icons.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="icon/font-awesome/css/font-awesome.min.css">
+    <!-- scrollbar.css -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css">
+    <!-- am chart export.css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+      <div id="pcoded" class="pcoded">
+          <div class="pcoded-overlay-box"></div>
+              <div class="pcoded-container navbar-wrapper">
+                  <nav class="navbar header-navbar pcoded-header">
+                      <div class="navbar-wrapper">
+
+<!--Libra Backoffice + Collapse Btn -->
+                          <div class="navbar-logo">
+                              <a class="mobile-menu waves-effect waves-light" id="mobile-collapse" href="#!">
+                                  <i class="ti-menu"></i>
+                              </a>
+                              <a href="index.html" style="margin-left:15%">
+                                  <b class="d-none d-lg-block">Libra Backoffice</b>
+                              </a>
+                          </div>
+
+<!--Profile Options-->
+                          <div class="navbar-container container-fluid">
+
+                              <ul class="nav-right">
+
+                                  <li class="user-profile header-notification">
+
+                                      <a href="#!" class=" mobile-menu waves-effect waves-light">
+                                          <img src="avatar/avatar.jpg" alt="User-Profile-Image" class="img-radius">
+                                          <span>Robert</span>
+                                          <i class="ti-angle-down"></i>
+                                      </a>
+
+                                      <ul class="show-notification profile-notification">
+                                          <li class="waves-effect waves-light">
+                                              <a href="user-profile.html">
+                                                  <i class="ti-user"></i> Profile
+                                              </a>
+                                          </li>
+
+                                          <li class="waves-effect waves-light">
+                                              <a href="auth-normal-sign-in.html">
+                                                  <i class="ti-layout-sidebar-left"></i> Logout
+                                              </a>
+                                          </li>
+                                      </ul>
+
+                                  </li>
+
+                              </ul>
+                          </div>
+
+                      </div>
+                  </nav>
+
+<!--Meniu Lateral-->
+                  <div class="pcoded-main-container">
+                      <div class="pcoded-wrapper">
+                          <nav class="pcoded-navbar">
+                              <div class="pcoded-inner-navbar main-menu">
+                                  <div class="pcoded-navigation-label" data-i18n="nav.category.navigation"></div>
+                                      <ul class="pcoded-item pcoded-left-item">
+                                          <li class="">
+                                              <a href="index.html" class="waves-effect waves-dark">
+                                                  <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                                  <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
+                                                  <span class="pcoded-mcaret"></span>
+                                              </a>
+                                          </li>
+                                          </ul>
+                                  <ul class="pcoded-item pcoded-left-item">
+
+                                  <li class="pcoded-hasmenu">
+                                              <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                                  <span class="pcoded-micon"><i class="ti-package"></i></span>
+                                                  <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Products</span>
+                                                  <span class="pcoded-mcaret"></span>
+                                              </a>
+                                              <ul class="pcoded-submenu">
+                                                  <li class=" ">
+                                                      <a href="accordion.html" class="waves-effect waves-dark">
+                                                          <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                          <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Laptops</span>
+                                                          <span class="pcoded-mcaret"></span>
+                                                      </a>
+                                                  </li>
+                                              </ul>
+                                              <ul class="pcoded-submenu">
+                                                  <li class=" ">
+                                                      <a href="accordion.html" class="waves-effect waves-dark">
+                                                          <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                          <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Phones</span>
+                                                          <span class="pcoded-mcaret"></span>
+                                                      </a>
+                                                  </li>
+                                              </ul>
+                                              <ul class="pcoded-submenu">
+                                                  <li class=" ">
+                                                      <a href="accordion.html" class="waves-effect waves-dark">
+                                                          <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                          <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Desktop</span>
+                                                          <span class="pcoded-mcaret"></span>
+                                                      </a>
+                                                  </li>
+                                              </ul>
+                                      <div class="pcoded-navigation-label" data-i18n="nav.category.navigation">Monitors</div>
+
+                                      <ul class="pcoded-submenu">
+                                                  <li class=" ">
+                                                      <a href="accordion.html" class="waves-effect waves-dark">
+                                                          <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                          <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">TVs</span>
+                                                          <span class="pcoded-mcaret"></span>
+                                                      </a>
+                                                  </li>
+                                              </ul>
+                                          </li>
+                                      </ul>
+                                  <ul class="pcoded-item pcoded-left-item">
+                                      <li>
+                                          <a href="form-elements-component.html" class="waves-effect waves-dark">
+                                              <span class="pcoded-micon"><i class="ti-user"></i></span>
+                                              <span class="pcoded-mtext" data-i18n="nav.form-components.main">Users</span>
+                                              <span class="pcoded-mcaret"></span>
+                                          </a>
+                                      </li>
+                                  </ul>
+                                  <ul class="pcoded-item pcoded-left-item">
+                                      <li>
+                                          <a href="form-elements-component.html" class="waves-effect waves-dark">
+                                              <span class="pcoded-micon"><i class="ti-briefcase"></i><b>FC</b></span>
+                                              <span class="pcoded-mtext" data-i18n="nav.form-components.main">Employee</span>
+                                              <span class="pcoded-mcaret"></span>
+                                          </a>
+                                      </li>
+                                  </ul>
+                              </div>
+                              </nav>
+
+<!--Body Content -->
+                          <div class="pcoded-content">
+                                <div class="pcoded-inner-content">
+<!-- Main-body start -->
+                                    <div class="main-body">
+                                        <div class="page-wrapper">
+<!-- Page-body start -->
+                                            <div class="page-body">
+                                                <div class="row">
+<!-- task, page, download counter  start -->
+<!-- task, page, download counter  end -->
+                                                </div>
+                                            </div>
+<!-- Page-body end -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                          </div>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+    <!-- Warning Section Starts -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 10]>
+    <div class="ie-warning">
+        <h1>Warning!!</h1>
+        <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+        <div class="iew-container">
+            <ul class="iew-download">
+                <li>
+                    <a href="http://www.google.com/chrome/">
+                        <img src="images/browser/chrome.png" alt="Chrome">
+                        <div>Chrome</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.mozilla.org/en-US/firefox/new/">
+                        <img src="images/browser/firefox.png" alt="Firefox">
+                        <div>Firefox</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.opera.com">
+                        <img src="images/browser/opera.png" alt="Opera">
+                        <div>Opera</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.apple.com/safari/">
+                        <img src="images/browser/safari.png" alt="Safari">
+                        <div>Safari</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                        <img src="images/browser/ie.png" alt="">
+                        <div>IE (9 & above)</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <p>Sorry for the inconvenience!</p>
+    </div>
+    <![endif]-->
+    <!-- Warning Section Ends -->
+
+    <!-- Required Jquery -->
+    <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js "></script>
+    <script type="text/javascript" src="js/popper.js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap/js/bootstrap.min.js "></script>
+    <script type="text/javascript" src="pages/widget/excanvas.js "></script>
+    <!-- waves js -->
+    <script src="pages/waves/js/waves.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="js/jquery-slimscroll/jquery.slimscroll.js "></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="js/modernizr/modernizr.js "></script>
+    <!-- slimscroll js -->
+    <script type="text/javascript" src="js/SmoothScroll.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js "></script>
+    <!-- Chart js -->
+    <script type="text/javascript" src="js/chart.js/Chart.js"></script>
+    <!-- amchart js -->
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="pages/widget/amchart/gauge.js"></script>
+    <script src="pages/widget/amchart/serial.js"></script>
+    <script src="pages/widget/amchart/light.js"></script>
+    <script src="pages/widget/amchart/pie.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <!-- menu js -->
+    <script src="js/pcoded.min.js"></script>
+    <script src="js/vertical-layout.min.js "></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="pages/dashboard/custom-dashboard.js"></script>
+    <script type="text/javascript" src="js/script.js "></script>
+
+</body>
+
+</html>
