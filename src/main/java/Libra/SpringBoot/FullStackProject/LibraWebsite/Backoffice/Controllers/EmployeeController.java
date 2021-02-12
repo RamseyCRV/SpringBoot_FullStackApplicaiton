@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class EmployeeController {
 
-    @GetMapping(value = "/backoffice_employee")
+    @GetMapping(value = "/backoffice_employees")
     public String getEmployee(){
         return "./Backoffice/employee";
     }

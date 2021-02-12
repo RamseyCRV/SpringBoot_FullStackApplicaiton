@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <title>Libra Backoffice</title>
@@ -63,7 +63,7 @@
                                           </li>
 
                                           <li class="waves-effect waves-light">
-                                              <a href="auth-normal-sign-in.html">
+                                              <a href="auth-normal-sign-in.html" th:href="@{/backoffice_logout}">
                                                   <i class="ti-layout-sidebar-left"></i> Logout
                                               </a>
                                           </li>
@@ -85,7 +85,7 @@
                                   <div class="pcoded-navigation-label" data-i18n="nav.category.navigation"></div>
                                       <ul class="pcoded-item pcoded-left-item">
                                           <li class="">
-                                              <a href="index.html" class="waves-effect waves-dark">
+                                              <a href="index.html" class="waves-effect waves-dark" th:href="@{/backoffice_dashboard}">
                                                   <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                                   <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                                                   <span class="pcoded-mcaret"></span>
@@ -102,7 +102,7 @@
                                               </a>
                                               <ul class="pcoded-submenu">
                                                   <li class=" ">
-                                                      <a href="accordion.html" class="waves-effect waves-dark">
+                                                      <a href="accordion.html" class="waves-effect waves-dark" th:href="@{/backoffice_laptops}">
                                                           <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                           <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Laptops</span>
                                                           <span class="pcoded-mcaret"></span>
@@ -111,7 +111,7 @@
                                               </ul>
                                               <ul class="pcoded-submenu">
                                                   <li class=" ">
-                                                      <a href="accordion.html" class="waves-effect waves-dark">
+                                                      <a href="accordion.html" class="waves-effect waves-dark" th:href="@{/backoffice_phones}">
                                                           <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                           <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Phones</span>
                                                           <span class="pcoded-mcaret"></span>
@@ -120,7 +120,7 @@
                                               </ul>
                                               <ul class="pcoded-submenu">
                                                   <li class=" ">
-                                                      <a href="accordion.html" class="waves-effect waves-dark">
+                                                      <a href="accordion.html" class="waves-effect waves-dark" th:href="@{/backoffice_desktops}">
                                                           <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                           <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Desktop</span>
                                                           <span class="pcoded-mcaret"></span>
@@ -129,7 +129,7 @@
                                               </ul>
                                               <ul class="pcoded-submenu">
                                                   <li class=" ">
-                                                      <a href="accordion.html" class="waves-effect waves-dark">
+                                                      <a href="accordion.html" class="waves-effect waves-dark" th:href="@{/backoffice_monitors}">
                                                           <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                           <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Monitors</span>
                                                           <span class="pcoded-mcaret"></span>
@@ -138,7 +138,7 @@
                                               </ul>
                                               <ul class="pcoded-submenu">
                                                   <li class=" ">
-                                                      <a href="accordion.html" class="waves-effect waves-dark">
+                                                      <a href="accordion.html" class="waves-effect waves-dark" th:href="@{/backoffice_tvs}">
                                                           <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                           <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">TVs</span>
                                                           <span class="pcoded-mcaret"></span>
@@ -149,7 +149,7 @@
                                       </ul>
                                   <ul class="pcoded-item pcoded-left-item">
                                       <li>
-                                          <a href="form-elements-component.html" class="waves-effect waves-dark">
+                                          <a href="form-elements-component.html" class="waves-effect waves-dark" th:href="@{/backoffice_users}">
                                               <span class="pcoded-micon"><i class="ti-user"></i></span>
                                               <span class="pcoded-mtext" data-i18n="nav.form-components.main">Users</span>
                                               <span class="pcoded-mcaret"></span>
@@ -158,7 +158,7 @@
                                   </ul>
                                   <ul class="pcoded-item pcoded-left-item">
                                       <li class="active">
-                                          <a href="form-elements-component.html" class="waves-effect waves-dark">
+                                          <a href="form-elements-component.html" class="waves-effect waves-dark" th:href="@{/backoffice_employees}">
                                               <span class="pcoded-micon"><i class="ti-briefcase"></i><b>FC</b></span>
                                               <span class="pcoded-mtext" data-i18n="nav.form-components.main">Employee</span>
                                               <span class="pcoded-mcaret"></span>
