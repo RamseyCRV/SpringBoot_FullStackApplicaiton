@@ -6,13 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ApplicationController {
 
-
-    @GetMapping(value = "/backofficelogin")
+    @GetMapping(value = "/backoffice_login")
     public String getBackofficeLogin(){ return "./Backoffice/login"; }
 
-    @GetMapping(value = "/backofficeregister")
+    @GetMapping(value = "/backoffice_register")
     public String getBackofficeRegister(){ return "./Backoffice/register"; }
 
-    @GetMapping(value = "/backofficelogout")
+    @GetMapping(value = "/backoffice_logout")
     public String getBackofficeLogout() { return "./Backoffice/logout"; }
 }
