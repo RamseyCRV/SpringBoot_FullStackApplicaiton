@@ -4,7 +4,11 @@ import Libra.SpringBoot.FullStackProject.LibraWebsite.Backoffice.Models.Desktop;
 import Libra.SpringBoot.FullStackProject.LibraWebsite.Backoffice.Repositories.DesktopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,7 +30,9 @@ public class DesktopService {
         return desktopRepository.findById(id);
     }
 
-    public void deleteDesktop(int id){
+    public void deleteDesktop(Integer id){
         desktopRepository.deleteById(id);
     }
+
+
 }

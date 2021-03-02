@@ -166,6 +166,37 @@
                           <div class="pcoded-content">
                                 <div class="pcoded-inner-content">
 <!-- Main-body start -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addDesktopModal"
+                                            data-whatever="@mdo">New Desktop</button>
+                                    <form>
+                                        <table class="table">
+                                            <thead class="thead">
+                                                <tr>
+                                                    <th scope="col">Photo</th>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Price</th>
+                                                    <th scope="col">In Stock</th>
+                                                    <th scope="col">Units Sold</th>
+                                                    <th scope="col">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr th:each="desktop:${desktops}">
+                                                    <td class="align-middle"><img th:src="*{'data:image/png;base64,' + {desktop.image}}" width="50px" height="50px"></td>
+
+                                                    <td th:text="${desktop.name}" class="align-middle">No Name</td>
+                                                    <td th:text="${desktop.price}" class="align-middle">No Price</td>
+                                                    <td th:text="${desktop.inStock}" class="align-middle">No Stock</td>
+                                                    <td th:text="${desktop.unitsSold}" class="align-middle">No Units Sold</td>
+                                                    <td class="align-middle">
+                                                        <a th:href="@{/backoffice_desktops/findById/(id=${desktop.id})}" class="btn btn-info" id="detailsDesktopButton">Info</a>
+                                                        <a th:href="@{/backoffice_desktops/findById/(id=${desktop.id})}" class="btn btn-success" id="editDesktopButton">Edit</a>
+                                                        <a th:href="@{/backoffice_desktops/delete/(id=${desktop.id})}" class="btn btn-danger" id="deleteDesktopButton">Delete</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </form>
                                     <div class="main-body">
                                         <div class="page-wrapper">
 <!-- Page-body start -->
@@ -188,6 +219,159 @@
           </div>
       </div>
 
+<!--Modals-->
+
+      <!--Delete Modal-->
+      <div class="modal" id="deleteDesktopModal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title">Confirm Delete</h5>
+
+                  </div>
+                  <div class="modal-body">
+                      <p>Are you sure?</p>
+                  </div>
+                  <div class="modal-footer">
+                      <a id="confirmDeleteDesktopButton" href="" class="btn btn-primary">Delete</a>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!--Add Modal-->
+      <div class="modal fade" id="addDesktopModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+           aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Add Desktop</h5>
+
+                  </div>
+                  <div class="modal-body">
+                      <form th:action="@{/backoffice_desktops/addNew}" method="post" enctype="multipart/form-data" th:object="${desktop}">
+                          <div class="form-group">
+                              <label for="recipient-name" class="col-form-label">Photo</label>
+                              <input type="file" class="form-control" id="recipient-name" name="image" accept="image/png, image/jpeg">
+                          </div>
+                          <div class="form-group">
+                              <label for="recipient-name" class="col-form-label">Name</label>
+                              <input type="text" class="form-control" id="recipient-name" name="name">
+                          </div>
+                          <div class="form-group">
+                              <label for="recipient-name" class="col-form-label">Price (RON)</label>
+                              <input type="text" class="form-control" id="recipient-name" name="price">
+                          </div>
+                          <div class="form-group">
+                              <label for="recipient-name" class="col-form-label">In Stock</label>
+                              <input type="text" class="form-control" id="recipient-name" name="inStock">
+                          </div>
+                          <div class="form-group">
+                              <label for="recipient-name" class="col-form-label">Units Sold</label>
+                              <input type="text" class="form-control" id="recipient-name" name="unitsSold">
+                          </div>
+                          <div class="form-group">
+                              <label for="recipient-name" class="col-form-label">Description</label>
+                              <textarea class="form-control" id="recipient-name" name="description"></textarea>
+                          </div>
+                          <div class="form-group">
+                              <button type="submit" class="btn btn-primary">Add Desktop</button>
+                          </div>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+<!--      Details Modal-->
+      <div class="modal fade" id="detailsDesktopModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+           aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title">Details</h5>
+                  </div>
+                  <div class="modal-body">
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">ID:</label>
+                          <input type="text" class="form-control" id="idDesktopDetails" name="id" readonly>
+                      </div>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Name:</label>
+                          <input type="text" class="form-control" id="nameDesktopDetails" name="name" readonly>
+                      </div>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Price:</label>
+                          <input type="text" class="form-control" id="priceDesktopDetails" name="price" readonly>
+                      </div>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">In Stock:</label>
+                          <input type="text" class="form-control" id="inStockDesktopDetails" name="inStock" readonly>
+                      </div>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Units Sold:</label>
+                          <textarea class="form-control" id="unitsSoldDesktopDetails" name="unitsSold" readonly></textarea>
+                      </div>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Units Sold:</label>
+                          <textarea class="form-control" id="descriptionDesktopDetails" name="description" readonly></textarea>
+                      </div>
+
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+<!--Edit Modal-->
+      <div class="modal fade" id="editDesktopModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+           aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel3">Edit Desktop</h5>
+
+                  </div>
+                  <div class="modal-body">
+                      <form th:action="@{/backoffice_desktops/update}" method="put">
+                          <div class="form-group">
+                              <label for="recipient-name" class="col-form-label">ID:</label>
+                              <input type="text" class="form-control" id="idDesktopEdit" name="id" readonly>
+                          </div>
+                          <div class="form-group">
+                              <label for="recipient-name" class="col-form-label">Name:</label>
+                              <input type="text" class="form-control" id="nameDesktopEdit" name="name">
+                          </div>
+                          <div class="form-group">
+                              <label for="recipient-name" class="col-form-label">Price:</label>
+                              <input type="text" class="form-control" id="priceDesktopEdit" name="price">
+                          </div>
+                          <div class="form-group">
+                              <label for="recipient-name" class="col-form-label">In Stock:</label>
+                              <input type="text" class="form-control" id="inStockDesktopEdit" name="inStock">
+                          </div>
+                          <div class="form-group">
+                              <label for="recipient-name" class="col-form-label">Units Sold:</label>
+                              <input type="text" class="form-control" id="unitsSoldDesktopEdit" name="unitsSold">
+                          </div>
+                          <div class="form-group">
+                              <label for="recipient-name" class="col-form-label">Description:</label>
+                              <textarea class="form-control" id="descriptionDesktopEdit" name="description"></textarea>
+                          </div>
+                          <div class="form-group">
+                              <button type="submit" class="btn btn-primary">Edit Desktop</button>
+                          </div>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
     <!-- Warning Section Starts -->
     <!-- Older IE warning message -->
     <!--[if lt IE 10]>
@@ -263,6 +447,7 @@
     <!-- custom js -->
     <script type="text/javascript" src="pages/dashboard/custom-dashboard.js"></script>
     <script type="text/javascript" src="js/script.js "></script>
+    <script src="js/backoffice_desktops.js"></script>
 
 </body>
 
