@@ -84,7 +84,7 @@
                               <div class="pcoded-inner-navbar main-menu">
                                   <div class="pcoded-navigation-label" data-i18n="nav.category.navigation"></div>
                                       <ul class="pcoded-item pcoded-left-item">
-                                          <li class="active">
+                                          <li >
                                               <a href="index.html" class="waves-effect waves-dark" th:href="@{/backoffice_dashboard}">
                                                   <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                                   <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
@@ -166,7 +166,7 @@
                                       </li>
                                   </ul>
                                   <ul class="pcoded-item pcoded-left-item">
-                                      <li >
+                                      <li class="active">
                                           <a href="form-elements-component.html" class="waves-effect waves-dark" th:href="@{/backoffice_github_jobs}">
                                               <span class="pcoded-micon"><i class="ti-briefcase"></i><b>FC</b></span>
                                               <span class="pcoded-mtext" data-i18n="nav.form-components.main">Github Jobs</span>
@@ -187,136 +187,7 @@
                                             <div class="page-body">
                                                 <div class="row">
 <!-- task, page, download counter  start -->
-                                                    <div class="col-xl-3 col-xl-4">
-                                                        <div class="card">
-                                                            <div class="card-block bg-c-blue">
-                                                                <div class="row align-items-center">
-                                                                    <div class="col-9">
-                                                                        <p class="text-white m-b-0">Registered Users</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="card-block">
-                                                                <div class="row align-items-center">
-                                                                    <div class="col-8">
-                                                                        <h4 class="text-c-blue">2920</h4>
-                                                                    </div>
-                                                                    <div class="col-4 text-right">
-                                                                        <i class="ti-user f-28"></i>                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
 
-                                                    <div class="col-xl-3 col-xl-4">
-                                                        <div class="card">
-                                                            <div class="card-block bg-c-blue">
-                                                                <div class="row align-items-center">
-                                                                    <div class="col-9">
-                                                                        <p class="text-white m-b-0">Employee</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="card-block">
-                                                                <div class="row align-items-center">
-                                                                    <div class="col-8">
-                                                                        <h4 class="text-c-blue">290</h4>
-                                                                    </div>
-                                                                    <div class="col-4 text-right">
-                                                                        <i class="ti-briefcase f-28"></i>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-                                                    <div class="col-xl-3 col-xl-4">
-                                                        <div class="card">
-                                                            <div class="card-block bg-c-blue">
-                                                                <div class="row align-items-center">
-                                                                    <div class="col-9">
-                                                                        <p class="text-white m-b-0">Admins</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="card-block">
-                                                                <div class="row align-items-center">
-                                                                    <div class="col-8">
-                                                                        <h4 class="text-c-blue">4</h4>
-                                                                    </div>
-                                                                    <div class="col-4 text-right">
-                                                                        <i class="ti-star f-28"></i>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-xl-3 col-xl-4">
-                                                        <div class="card">
-                                                            <div class="card-block bg-c-green">
-                                                                <div class="row align-items-center">
-                                                                    <div class="col-9">
-                                                                        <p class="text-white m-b-0">Products in stock</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="card-block">
-                                                                <div class="row align-items-center">
-                                                                    <div class="col-8">
-                                                                        <h4 class="text-c-green">4256</h4>
-                                                                    </div>
-                                                                    <div class="col-4 text-right">
-                                                                        <i class="ti-package f-28"></i>                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-xl-3 col-xl-4">
-                                                        <div class="card">
-                                                            <div class="card-block bg-c-red">
-                                                                <div class="row align-items-center">
-                                                                    <div class="col-9">
-                                                                        <p class="text-white m-b-0">Products out of stock</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="card-block">
-                                                                <div class="row align-items-center">
-                                                                    <div class="col-8">
-                                                                        <h4 class="text-c-red">42256</h4>
-                                                                    </div>
-                                                                    <div class="col-4 text-right">
-                                                                        <i class="ti-dropbox f-28"></i>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-xl-3 col-xl-4">
-                                                         <div class="card">
-                                                             <div class="card-block bg-c-purple">
-                                                                 <div class="row align-items-center">
-                                                                     <div class="col-9">
-                                                                         <p class="text-white m-b-0">Products sold</p>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                             <div class="card-block">
-                                                                 <div class="row align-items-center">
-                                                                     <div class="col-8">
-                                                                         <h4 class="text-c-purple">42256</h4>
-                                                                     </div>
-                                                                     <div class="col-4 text-right">
-                                                                         <i class="ti-shopping-cart-full f-28"></i>
-                                                                     </div>
-                                                                    </div>
-                                                                </div>
-                                                         </div>
-                                                    </div>
 <!-- task, page, download counter  end -->
                                                 </div>
                                             </div>

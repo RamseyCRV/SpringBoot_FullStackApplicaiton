@@ -28,12 +28,7 @@ import java.io.IOException;
 public class BackofficeSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
-
-    @Bean
-    public PasswordEncoder passwordEncoder(){
-        return NoOpPasswordEncoder.getInstance();
-    }
-
+    
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder(){
         return new BCryptPasswordEncoder();
@@ -45,7 +40,7 @@ public class BackofficeSecurityConfig extends WebSecurityConfigurerAdapter {
     public DaoAuthenticationProvider daoAuthenticationProvider(){
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setUserDetailsService(userDetailsService);
-        provider.setPasswordEncoder(passwordEncoder());
+        provider.setPasswordEncoder(bCryptPasswordEncoder());
         return provider;
     }
 
@@ -57,7 +52,7 @@ public class BackofficeSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(
                         "/backoffice_login", "/resources/**"
                         ,"/avatar/**","/css/**","/icon/**","/images/**", "/pages/**",
-                        "/bootstrap.css"
+                        "/bootstrap.css", "/Products/**", "/Desktops/**"
                 ).permitAll().anyRequest().authenticated()
                 .and().formLogin().loginPage("/backoffice_login")
                 .successHandler(new AuthenticationSuccessHandler() {

@@ -10,23 +10,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-public class Employee {
+public class GithubJobs {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String avatar;
-    private String phoneNumber;
-    private String jobTitle;
-    private String password;
-    private int salary;
-    private boolean isAdmin;
-
+    private String type;
+    private String url;
+    private String created_at;
+    private String company;
+    private String company_url;
+    private String location;
+    private String title;
+    private String description;
 
 }

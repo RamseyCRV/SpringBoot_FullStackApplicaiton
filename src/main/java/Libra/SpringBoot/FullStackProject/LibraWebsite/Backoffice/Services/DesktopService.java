@@ -26,10 +26,19 @@ public class DesktopService {
         desktopRepository.save(desktop);
     }
 
+    /**
+     * Find desktop with identifier
+     * @param id unique identifier
+     * @return the desktop
+     */
     public Optional<Desktop> findDesktopById(int id){
         return desktopRepository.findById(id);
     }
 
+    /**
+     * This method will delete a Desktop object
+     * @param id unique identifier
+     */
     public void deleteDesktop(Integer id){
         desktopRepository.deleteById(id);
     }

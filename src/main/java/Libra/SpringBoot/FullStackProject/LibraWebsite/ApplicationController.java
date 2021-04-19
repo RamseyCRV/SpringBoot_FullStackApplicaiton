@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ApplicationController {
 
     @GetMapping(value = "/backoffice_login")
-    public String getBackofficeLogin(){ return "./Backoffice/login"; }
+    public String getBackofficeLogin(){
+        return "./Backoffice/login"; }
 
     @GetMapping(value = "/backoffice_register")
     public String getBackofficeRegister(){ return "./Backoffice/register"; }

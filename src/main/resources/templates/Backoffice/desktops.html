@@ -51,7 +51,7 @@
 
                                       <a href="#!" class=" mobile-menu waves-effect waves-light">
                                           <img src="avatar/avatar.jpg" alt="User-Profile-Image" class="img-radius">
-                                          <span>Robert</span>
+                                          <span class="firstName" th:text="${#authentication.getPrincipal().getUsername()}">Guest</span>
                                           <i class="ti-angle-down"></i>
                                       </a>
 
@@ -159,6 +159,24 @@
                                           </a>
                                       </li>
                                   </ul>
+                                  <ul class="pcoded-item pcoded-left-item">
+                                      <li>
+                                          <a href="form-elements-component.html" class="waves-effect waves-dark" th:href="@{/backoffice_employees}">
+                                              <span class="pcoded-micon"><i class="ti-briefcase"></i><b>FC</b></span>
+                                              <span class="pcoded-mtext" data-i18n="nav.form-components.main">Rest API</span>
+                                              <span class="pcoded-mcaret"></span>
+                                          </a>
+                                      </li>
+                                  </ul>
+                                  <ul class="pcoded-item pcoded-left-item">
+                                      <li >
+                                          <a href="form-elements-component.html" class="waves-effect waves-dark" th:href="@{/backoffice_github_jobs}">
+                                              <span class="pcoded-micon"><i class="ti-briefcase"></i><b>FC</b></span>
+                                              <span class="pcoded-mtext" data-i18n="nav.form-components.main">Github Jobs</span>
+                                              <span class="pcoded-mcaret"></span>
+                                          </a>
+                                      </li>
+                                  </ul>
                               </div>
                               </nav>
 
@@ -182,16 +200,15 @@
                                             </thead>
                                             <tbody>
                                                 <tr th:each="desktop:${desktops}">
-                                                    <td class="align-middle"><img th:src="*{'data:image/png;base64,' + {desktop.image}}" width="50px" height="50px"></td>
-
+                                                    <td class="align-middle"><img th:src="@{'/Products/Desktops/' + ${desktop.image}}" width="50px" height="50px"></td>
                                                     <td th:text="${desktop.name}" class="align-middle">No Name</td>
                                                     <td th:text="${desktop.price}" class="align-middle">No Price</td>
                                                     <td th:text="${desktop.inStock}" class="align-middle">No Stock</td>
                                                     <td th:text="${desktop.unitsSold}" class="align-middle">No Units Sold</td>
                                                     <td class="align-middle">
-                                                        <a th:href="@{/backoffice_desktops/findById/(id=${desktop.id})}" class="btn btn-info" id="detailsDesktopButton">Info</a>
-                                                        <a th:href="@{/backoffice_desktops/findById/(id=${desktop.id})}" class="btn btn-success" id="editDesktopButton">Edit</a>
-                                                        <a th:href="@{/backoffice_desktops/delete/(id=${desktop.id})}" class="btn btn-danger" id="deleteDesktopButton">Delete</a>
+                                                        <a th:href="@{/backoffice_desktops/findById/(id=${desktop.id})}" class="btn btn-outline-info" id="detailsDesktopButton">Info</a>
+                                                        <a th:href="@{/backoffice_desktops/findById/(id=${desktop.id})}" class="btn btn-outline-success" id="editDesktopButton">Edit</a>
+                                                        <a th:href="@{/backoffice_desktops/delete/(id=${desktop.id})}" class="btn btn-outline-danger" id="deleteDesktopButton">Delete</a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -252,7 +269,7 @@
                       <form th:action="@{/backoffice_desktops/addNew}" method="post" enctype="multipart/form-data" th:object="${desktop}">
                           <div class="form-group">
                               <label for="recipient-name" class="col-form-label">Photo</label>
-                              <input type="file" class="form-control" id="recipient-name" name="image" accept="image/png, image/jpeg">
+                              <input type="file" name="image" accept="image/png, image/jpeg">
                           </div>
                           <div class="form-group">
                               <label for="recipient-name" class="col-form-label">Name</label>
@@ -295,6 +312,9 @@
                   </div>
                   <div class="modal-body">
                       <div class="form-group">
+                          <img id="imageDesktopDetails" name="image" src="" class="form-control"/>
+                      </div>
+                      <div class="form-group">
                           <label for="recipient-name" class="col-form-label">ID:</label>
                           <input type="text" class="form-control" id="idDesktopDetails" name="id" readonly>
                       </div>
@@ -312,7 +332,7 @@
                       </div>
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Units Sold:</label>
-                          <textarea class="form-control" id="unitsSoldDesktopDetails" name="unitsSold" readonly></textarea>
+                          <input class="form-control" id="unitsSoldDesktopDetails" name="unitsSold" readonly></input>
                       </div>
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Units Sold:</label>
@@ -336,7 +356,13 @@
 
                   </div>
                   <div class="modal-body">
-                      <form th:action="@{/backoffice_desktops/update}" method="put">
+
+                      <form th:action="@{/backoffice_desktops/update}" method="put" >
+
+<!--                          <div class="form-group">-->
+<!--                              <img id="imageDesktopEdit" src="" class="form-control"/>-->
+<!--                          </div>-->
+                          <input type="text" hidden id="imageDesktop" name="image">
                           <div class="form-group">
                               <label for="recipient-name" class="col-form-label">ID:</label>
                               <input type="text" class="form-control" id="idDesktopEdit" name="id" readonly>
