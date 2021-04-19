@@ -1,4 +1,4 @@
-# SpringBoot_FullStackApplicaiton
+# SpringBoot_DashboardApplication
 * Spring Security
 * Spring MVC
 * Spring Boot
